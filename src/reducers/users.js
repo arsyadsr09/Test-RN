@@ -1,20 +1,29 @@
+/* eslint-disable no-fallthrough */
 // Imports Constant
-import {SET_USERS} from '../constant/types';
+import {GET_USERS} from '../constant/types';
 
 // Initial State
 const initialState = {
-  users: [],
+  list: {
+    data: [],
+    total: 0,
+  },
+  detail: {},
 };
 // Reducers (Modifies The State And Returns A New State)
-const usersReducers = (state = initialState, action) => {
+export default function usersReducers(state = initialState, action) {
   switch (action.type) {
     // Set Users
-    case SET_USERS:
+    case GET_USERS:
       return {
         // State
         ...state,
         // Redux Store
-        users: action.payload.data,
+        list: {
+          ...state.list,
+          data: action.payload.data,
+          total: action.payload.total,
+        },
       };
 
     // Default
@@ -22,7 +31,4 @@ const usersReducers = (state = initialState, action) => {
       return state;
     }
   }
-};
-
-// Exports
-export default usersReducers;
+}

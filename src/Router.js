@@ -1,24 +1,50 @@
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import Home from './screens/Home';
-import {Image} from 'react-native';
-import React from 'react';
+import Employees from './screens/Employees';
+import Profile from './screens/Profile';
 
 const Router = createStackNavigator(
   {
     Home: {
       screen: Home,
       navigationOptions: {
-        headerTitle: (
-          <Image
-            style={{width: 100, resizeMode: 'contain'}}
-            source={require('./assets/toffin_logo.png')}
-          />
-        ),
+        header: null,
+      },
+    },
+    Employees: {
+      screen: Employees,
+      navigationOptions: {
+        headerTitle: 'Employees',
+        headerTintColor: '#F79520',
+        headerTitleStyle: {
+          color: 'white',
+        },
         headerTitleContainerStyle: {
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
+          backgroundColor: 'rgba(47, 53, 66,1.0)',
+          alignSelf: 'center',
+        },
+        headerLeftContainerStyle: {
+          backgroundColor: 'rgba(47, 53, 66,1.0)',
+          color: 'white',
+        },
+      },
+    },
+    Profile: {
+      screen: Profile,
+      navigationOptions: {
+        headerTitle: 'Profile',
+        headerTintColor: '#F79520',
+        headerTitleStyle: {
+          color: 'white',
+        },
+        headerTitleContainerStyle: {
+          backgroundColor: 'rgba(47, 53, 66,1.0)',
+          alignSelf: 'center',
+        },
+        headerLeftContainerStyle: {
+          backgroundColor: 'rgba(47, 53, 66,1.0)',
+          color: 'white',
         },
       },
     },

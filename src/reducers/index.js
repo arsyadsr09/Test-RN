@@ -1,11 +1,11 @@
 // Imports: Dependencies
 import {combineReducers} from 'redux';
 // Imports: Reducers
-import usersReducer from './users';
+import usersReducers from './users';
 
 // Redux: Root Reducer
 const rootReducer = combineReducers({
-  usersReducer: usersReducer,
+  usersReducers: usersReducers,
 });
 
 // Exports
